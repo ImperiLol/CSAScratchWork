@@ -14,7 +14,7 @@ public class ProjectEuler {
       int a = 1;
       int b = 2;
       int sum = 0;
-      while (b <= 4000000) {
+      while (b < 4000 * 1000) {
          if (b % 2 == 0) {
             sum += b;
          }
@@ -27,18 +27,18 @@ public class ProjectEuler {
 
    public static long problem10() {
       long sum = 0;
-      boolean[] isPrime = new boolean[2000000];
-      for (int i = 2; i < 2000000; i++) {
+      boolean[] isPrime = new boolean[2000 * 1000];
+      for (int i = 2; i < isPrime.length; i++) {
          isPrime[i] = true;
       }
-      for (int p = 2; p * p < 2000000; p++) {
+      for (int p = 2; p * p < isPrime.length; p++) {
          if (isPrime[p]) {
-            for (int i = p * p; i < 2000000; i += p) {
+            for (int i = p * p; i < isPrime.length; i += p) {
                isPrime[i] = false;
             }
          }
       }
-      for (int i = 2; i < 2000000; i++) {
+      for (int i = 2; i < isPrime.length; i++) {
          if (isPrime[i]) {
             sum += i;
          }
