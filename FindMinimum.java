@@ -3,7 +3,7 @@ public class FindMinimum{
       int minNum = 100;
       for (int i = 0; i < 10; i++){
          int randNum = (int) (Math.random() * 100);
-         if (randNum > minNum){
+         if (randNum < minNum){
             minNum = randNum;
          }
       }
